@@ -1,4 +1,4 @@
-package com.rcorpin.woosimprinter;
+package com.rcorpin.woosimPrinter;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
