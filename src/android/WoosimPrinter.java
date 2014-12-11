@@ -10,6 +10,11 @@ import org.json.JSONException;
 
 public class WoosimPrinter extends CordovaPlugin {
 	public static final String ACTION_PRINT_TEST = "printTest";
+
+	@Override
+	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+	    super.initialize(cordova, webView);
+	}
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
