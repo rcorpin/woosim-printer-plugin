@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.rcorpin.woosimPrinter"
         version="0.1.0">
     <name>WoosimPrinter</name>
     <description>Woosim Printer Cordova Plugin</description>
-    <license>Wyzelink</license>
+    <license>All Rights Reserved</license>
     <keywords>phonegap,cordova,woosim,printer,bluetooth</keywords>
  
  
     <js-module src="www/woosimPrinter.js" name="woosimPrinter">
-        <clobbers target="window.woosimPrinter" />
+        <clobbers target="woosimPrinter" />
     </js-module>
  
     <!-- android -->
     <platform name="android">
         <config-file target="" parent="/*">
             <feature name="WoosimPrinter">
-                <param name="android-package" value="com.rcorpin.woosimPrinter.WoosimPrinter"/>
+                <param name="android-package" value="WoosimPrinter"/>
             </feature>
         </config-file>
  
