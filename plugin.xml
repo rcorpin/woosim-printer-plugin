@@ -9,8 +9,8 @@
     <keywords>phonegap,cordova,woosim,printer,bluetooth</keywords>
  
  
-    <js-module src="www/woosimPrinter.js" name="woosimPrinter">
-        <clobbers target="woosimPrinter" />
+    <js-module src="www/woosimPrinter.js" name="WoosimPrinter">
+        <clobbers target="window.woosimPrinter" />
     </js-module>
  
     <!-- android -->
