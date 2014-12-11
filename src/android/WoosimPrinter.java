@@ -22,7 +22,7 @@ public class WoosimPrinter extends CordovaPlugin {
 	    	return false;
 		} catch(Exception e) {
 		    System.err.println("Exception: " + e.getMessage());
-		    callbackContext.error(e.getMessage());
+		    callbackContext.error(e.getMessage() + ": " + action);
 		    return false;
 		}
 	}
