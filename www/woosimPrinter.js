@@ -10,4 +10,4 @@ var woosimPrinter = {
 	}
 }
 
-module.export = woosimPrinter;
+module.exports = woosimPrinter;
