@@ -10,13 +10,13 @@
  
  
     <js-module src="www/WoosimPrinter.js" name="WoosimPrinter">
-        <clobbers target="woosimPrinter" />
+        <clobbers target="window.woosimPrinter" />
     </js-module>
  
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Woosim Printer">
+            <feature name="WoosimPrinter">
                 <param name="android-package" value="com.rcorpin.woosimPrinter.WoosimPrinter"/>
             </feature>
         </config-file>
