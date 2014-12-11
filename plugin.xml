@@ -15,7 +15,7 @@
  
     <!-- android -->
     <platform name="android">
-        <config-file target="" parent="/*">
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="WoosimPrinter">
                 <param name="android-package" value="WoosimPrinter"/>
             </feature>
