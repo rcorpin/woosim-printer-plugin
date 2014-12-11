@@ -16,7 +16,6 @@ public class WoosimPrinter extends CordovaPlugin {
 	    super.initialize(cordova, webView);
 	}
 	
-	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 			if (ACTION_PRINT_TEST.equals(action)) {
