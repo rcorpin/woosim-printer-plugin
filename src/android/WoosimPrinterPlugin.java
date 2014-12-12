@@ -11,19 +11,27 @@ import org.json.JSONException;
 
 import com.woosim.bt.WoosimPrinter;
 public class WoosimPrinterPlugin extends CordovaPlugin {
+	public static final String ACTION_CHECK_CONNECTION = "checkConnection";
 	public static final String ACTION_PRINT_TEST = "printTest";
-	private final static String EUC_KR = "EUC-KR";
+
+	private String isConnected;
 	private WoosimPrinter woosim;
+
+	private final static String EUC_KR = "EUC-KR";
 
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 	    super.initialize(cordova, webView);
 	    woosim = new WoosimPrinter();
+	    isConnected = "false";
 	}
 	
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
-			if (ACTION_PRINT_TEST.equals(action)) {
+			if (ACTION_CHECK_CONNECTION.equals(action)) {
+				callbackContext.success(isConnected);
+				return true;
+			} else if (ACTION_PRINT_TEST.equals(action)) {
 				woosim.saveSpool(EUC_KR, "Woosim Printer Cordova Plugin", 0, false);
 				woosim.printSpool(true);
 				callbackContext.success();
