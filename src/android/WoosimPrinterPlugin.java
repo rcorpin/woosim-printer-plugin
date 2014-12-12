@@ -43,6 +43,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
 				woosim.saveSpool(EUC_KR, " Sales Receipt\r\n\r\n\r\n", 0x11, true);
+				woosim.saveSpool(EUC_KR, "MERCHANT NAME                               Dr. Green\r\n", 0, false);
 				int ret = woosim.printSpool(true);
 				callbackContext.success(ret);
 	            return true;
