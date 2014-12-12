@@ -23,6 +23,8 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 			if (ACTION_PRINT_TEST.equals(action)) {
+				woosim.saveSpool(EUC_KR, "Woosim Printer Cordova Plugin", 0, false);
+				woosim.printSpool(true);
 				callbackContext.success();
 	            return true;
 			}
