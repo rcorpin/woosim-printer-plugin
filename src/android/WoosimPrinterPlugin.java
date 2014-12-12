@@ -59,6 +59,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				woosim.saveSpool(EUC_KR, "Total                    29.5$\r\n", 0, false);
 
 				woosim.saveSpool(EUC_KR, "--------------------------------\r\n", 0, false);
+				
 				int ret = woosim.printSpool(true);
 				callbackContext.success(ret);
 	            return true;
