@@ -43,7 +43,6 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
 				woosim.saveSpool(EUC_KR, " Dr. Green Invoice\r\n\r\n\r\n", 0x11, true);
-
 				woosim.saveSpool(EUC_KR, "MERCHANT NAME     woosim coffee\r\n", 0, false);
 				woosim.saveSpool(EUC_KR, "MASTER            Gil-dong Hong\r\n", 0, false);
 				woosim.saveSpool(EUC_KR, "ADDRESS   #501, Daerung Techno\r\n          town3rd 448,Gasan-dong\r\n          Gumcheon-gu, Seoul\r\n          Korea\r\n", 0, false);
@@ -59,6 +58,12 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				woosim.saveSpool(EUC_KR, "Total                    29.5$\r\n", 0, false);
 
 				woosim.saveSpool(EUC_KR, "--------------------------------\r\n", 0, false);
+				byte[] lf = {0x0a};
+				woosim.controlCommand(lf, lf.length);
+				woosim.controlCommand(lf, lf.length);
+				woosim.controlCommand(lf, lf.length);
+				byte[] ff ={0x0c};
+				woosim.controlCommand(ff, 1);
 				
 				int ret = woosim.printSpool(true);
 				callbackContext.success(ret);
