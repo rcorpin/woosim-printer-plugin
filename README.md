@@ -3,6 +3,8 @@ woosim-printer-plugin
 
 Cordova plugin for Woosim BT printer
 
+`[Still in progress; as of now, printTest can be called to print a sample receipt]`
+
 
 ## How To:
 
@@ -19,4 +21,4 @@ Cordova plugin for Woosim BT printer
 	* woosimPrinter.connectBt(bt_mac_addr, successCallback, errorCallback);
 	  - bt_mac_addr: MAC address of the Woosim BT Printer
 
-	* woosimPrinter.print(successCallback, errorCallback);
+	* woosimPrinter.printTest(successCallback, errorCallback);
