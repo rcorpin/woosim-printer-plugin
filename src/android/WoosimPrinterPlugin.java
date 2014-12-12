@@ -42,9 +42,9 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				callbackContext.success(ret);
 				return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
-				woosim.saveSpool(EUC_KR, "Woosim Printer Cordova Plugin", 0, false);
-				woosim.printSpool(true);
-				callbackContext.success();
+				woosim.saveSpool("UTF-8", "Woosim Printer Cordova Plugin", 0, true);
+				int ret = woosim.printSpool(true);
+				callbackContext.success(ret);
 	            return true;
 			}
 			callbackContext.error("Invalid action");
