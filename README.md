@@ -3,7 +3,7 @@ woosim-printer-plugin
 
 Cordova plugin for Woosim BT printer
 
-`[Still in progress; as of now, printTest can be called to print a sample receipt]`
+Still in progress; as of now, printTest can be called to print a sample receipt
 
 
 ## How To:
@@ -15,7 +15,7 @@ Cordova plugin for Woosim BT printer
 	cordova plugins remove com.rcorpin.woosimPrinter 
 
 ### Using the plugin in Javascript:
-	No need to instantiate anything, just call the *Commands*.
+	No need to instantiate anything, just call the **Commands**.
 
 ### Commands:
 	* woosimPrinter.connectBt(bt_mac_addr, successCallback, errorCallback);
