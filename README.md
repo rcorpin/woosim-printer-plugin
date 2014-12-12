@@ -13,9 +13,10 @@ Cordova plugin for Woosim BT printer
 	cordova plugins remove com.rcorpin.woosimPrinter 
 
 ### Using the plugin in Javascript:
-	just call the plugin commands
+	No need to instantiate anything, just call the *Commands*.
 
 ### Commands:
 	* woosimPrinter.connectBt(bt_mac_addr, successCallback, errorCallback);
 	  - bt_mac_addr: MAC address of the Woosim BT Printer
+
 	* woosimPrinter.print(successCallback, errorCallback);
