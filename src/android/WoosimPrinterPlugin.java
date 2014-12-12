@@ -42,7 +42,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				callbackContext.success(ret);
 				return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
-				woosim.saveSpool("UTF-8", "Woosim Printer Cordova Plugin", 0, true);
+				woosim.saveSpool(EUC_KR, " Sales Receipt\r\n\r\n\r\n", 0x11, true);
 				int ret = woosim.printSpool(true);
 				callbackContext.success(ret);
 	            return true;
