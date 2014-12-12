@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import com.woosim.bt.WoosimPrinter;
 public class WoosimPrinter extends CordovaPlugin {
 	public static final String ACTION_PRINT_TEST = "printTest";
 	private WoosimPrinter woosim;
@@ -16,6 +17,7 @@ public class WoosimPrinter extends CordovaPlugin {
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 	    super.initialize(cordova, webView);
+	    woosim = new WoosimPrinter();
 	}
 	
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
