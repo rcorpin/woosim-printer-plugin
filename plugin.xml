@@ -21,6 +21,7 @@
             </feature>
         </config-file>
  
-        <source-file src="src/android/WoosimPrinter.java" target-dir="src/com/rcorpin/woosimPrinter" />      
+        <source-file src="src/android/WoosimPrinter.java" target-dir="src/com/rcorpin/woosimPrinter" />  
+        <source-file src="woosimprinter_bt.jar" target-dir="libs" framework="true" />    
      </platform>          
 </plugin>
