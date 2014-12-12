@@ -14,6 +14,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 	public static final String ACTION_CHECK_CONNECTION = "checkConnection";
 	public static final String ACTION_CONNECT_BT = "connectBt";
 	public static final String ACTION_PRINT_TEST = "printTest";
+	public static final String ACTION_PRINT_JSON_ARRAY = "printJsonArray";
 
 	private String isConnected;
 	private WoosimPrinter woosim;
@@ -41,6 +42,16 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				}
 				callbackContext.success(ret);
 				return true;
+			} else if  (ACTION_PRINT_JSON_ARRAY.equals(action)) {
+				int index;
+				for (index=0; index<args.length; ++index){
+					JSONObject arg_object = args.getJSONObject(index);
+					woosim.saveSpool(arg_object.charset, arg_object.data, arg_object.fontValue, arg_object.emphasis);
+				}
+
+				int ret = woosim.printSpool(true);
+				callbackContext.success(ret);
+	            return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
 				woosim.saveSpool(EUC_KR, " Dr. Green Invoice\r\n\r\n\r\n", 0x11, true);
 				woosim.saveSpool(EUC_KR, "MERCHANT NAME     woosim coffee\r\n", 0, false);
@@ -68,7 +79,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				int ret = woosim.printSpool(true);
 				callbackContext.success(ret);
 	            return true;
-			}
+			} else {}
 			callbackContext.error("Invalid action");
 	    	return false;
 		} catch(Exception e) {

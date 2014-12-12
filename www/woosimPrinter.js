@@ -27,6 +27,15 @@ var woosimPrinter = {
 			'printTest',
 			[]
 		);
+	},
+	printArray: function(jsonArrayToBePrinted, successCallback, errorCallback) {
+		cordova.exec(
+			successCallback,
+			errorCallback,
+			'WoosimPrinterPlugin',
+			'printJsonArray',
+			jsonArrayToBePrinted
+		);
 	}
 }
 
