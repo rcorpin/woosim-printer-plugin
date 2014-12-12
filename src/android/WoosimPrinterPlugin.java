@@ -44,8 +44,8 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				return true;
 			} else if  (ACTION_PRINT_JSON_ARRAY.equals(action)) {
 				for (int index=0; index<args.length(); index++){
-					JSONObject arg_object = args.getJSONObject(index);
-					woosim.saveSpool(arg_object.getString("charset"), arg_object.getBytes("data"), arg_object.getBytes("fontValue"), arg_object.getBoolean("emphasis"));
+					JSONObject arg_object = args.getJSONObject(0);
+					woosim.saveSpool(arg_object.getString("charset"), arg_object.getString("data"), arg_object.getBytes("fontValue"), arg_object.getBoolean("emphasis"));
 				}
 
 				int ret = woosim.printSpool(true);
