@@ -12,6 +12,7 @@ import org.json.JSONException;
 import com.woosim.bt.WoosimPrinter;
 public class WoosimPrinterPlugin extends CordovaPlugin {
 	public static final String ACTION_PRINT_TEST = "printTest";
+	private final static String EUC_KR = "EUC-KR";
 	private WoosimPrinter woosim;
 
 	@Override
