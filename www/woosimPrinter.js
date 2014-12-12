@@ -3,7 +3,7 @@ var woosimPrinter = {
 		cordova.exec(
 			successCallback,
 			errorCallback,
-			'WoosimPrinter',
+			'WoosimPrinterPlugin',
 			'printTest',
 			[]
 		);

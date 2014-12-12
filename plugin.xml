@@ -3,25 +3,25 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="com.rcorpin.woosimPrinter"
         version="0.1.0">
-    <name>WoosimPrinter</name>
+    <name>WoosimPrinterPlugin</name>
     <description>Woosim Printer Cordova Plugin</description>
     <license>All Rights Reserved</license>
     <keywords>phonegap,cordova,woosim,printer,bluetooth</keywords>
  
  
-    <js-module src="www/woosimPrinter.js" name="WoosimPrinter">
+    <js-module src="www/woosimPrinter.js" name="WoosimPrinterPlugin">
         <clobbers target="window.woosimPrinter" />
     </js-module>
  
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="WoosimPrinter">
-                <param name="android-package" value="com.rcorpin.woosimPrinter.WoosimPrinter"/>
+            <feature name="WoosimPrinterPlugin">
+                <param name="android-package" value="com.rcorpin.woosimPrinter.WoosimPrinterPlugin"/>
             </feature>
         </config-file>
  
-        <source-file src="src/android/WoosimPrinter.java" target-dir="src/com/rcorpin/woosimPrinter" />  
+        <source-file src="src/android/WoosimPrinterPlugin.java" target-dir="src/com/rcorpin/woosimPrinter" />  
         <source-file src="woosimprinter_bt.jar" target-dir="libs" framework="true" />    
      </platform>          
 </plugin>

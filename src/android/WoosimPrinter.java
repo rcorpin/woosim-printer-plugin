@@ -10,7 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import com.woosim.bt.WoosimPrinter;
-public class WoosimPrinter extends CordovaPlugin {
+public class WoosimPrinterPlugin extends CordovaPlugin {
 	public static final String ACTION_PRINT_TEST = "printTest";
 	private WoosimPrinter woosim;
 
