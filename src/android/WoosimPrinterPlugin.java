@@ -12,6 +12,7 @@ import org.json.JSONException;
 import com.woosim.bt.WoosimPrinter;
 public class WoosimPrinterPlugin extends CordovaPlugin {
 	public static final String ACTION_CHECK_CONNECTION = "checkConnection";
+	public static final String ACTION_CONNECT_BT = "connectBt";
 	public static final String ACTION_PRINT_TEST = "printTest";
 
 	private String isConnected;
@@ -30,6 +31,11 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 		try {
 			if (ACTION_CHECK_CONNECTION.equals(action)) {
 				callbackContext.success(isConnected);
+				return true;
+			} else if (ACTION_CONNECT_BT.equals(action)) {
+				String bt_mac_addr = args.getString("bt_mac_addr");
+				int ret = woosim.BTConnection(bt_mac_addr);
+				callbackContext.success(ret);
 				return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
 				woosim.saveSpool(EUC_KR, "Woosim Printer Cordova Plugin", 0, false);
