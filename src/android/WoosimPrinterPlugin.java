@@ -33,7 +33,8 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				callbackContext.success(isConnected);
 				return true;
 			} else if (ACTION_CONNECT_BT.equals(action)) {
-				String bt_mac_addr = args.getString("bt_mac_addr");
+				JSONObject arg_object = args.getJSONObject(0);
+				String bt_mac_addr = arg_object.getString("bt_mac_addr");
 				int ret = woosim.BTConnection(bt_mac_addr, false);
 				callbackContext.success(ret);
 				return true;
