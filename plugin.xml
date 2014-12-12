@@ -20,9 +20,6 @@
                 <param name="android-package" value="com.rcorpin.woosimPrinter.WoosimPrinter"/>
             </feature>
         </config-file>
-        <config-file target=".classpath" parent="/*">
-            <classpathentry kind="lib" path="../../plugins/com.rcorpin.woosimPrinter/woosimprinter_bt.jar"/>
-        </config-file>
  
         <source-file src="src/android/WoosimPrinter.java" target-dir="src/com/rcorpin/woosimPrinter" />      
      </platform>          
