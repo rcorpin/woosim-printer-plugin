@@ -8,14 +8,14 @@ var woosimPrinter = {
 			[]
 		);
 	},
-	connectBt: function(bt_mac_addr, successCallback, errorCallback) {
+	connectBt: function(btMacAddr, successCallback, errorCallback) {
 		cordova.exec(
 			successCallback,
 			errorCallback,
 			'WoosimPrinterPlugin',
 			'connectBt',
 			[{
-				"bt_mac_addr": bt_mac_addr
+				"btMacAddr": btMacAddr
 			}]
 		);
 	},
@@ -35,6 +35,26 @@ var woosimPrinter = {
 			'WoosimPrinterPlugin',
 			'printJsonArray',
 			jsonArrayToBePrinted
+		);
+	},
+	saveSpool: function(jsonArrayToBePrinted, successCallback, errorCallback) {
+		cordova.exec(
+			successCallback,
+			errorCallback,
+			'WoosimPrinterPlugin',
+			'saveSpool',
+			jsonArrayToBePrinted
+		);
+	},
+	printSpool: function(printBool, successCallback, errorCallback) {
+		cordova.exec(
+			successCallback,
+			errorCallback,
+			'WoosimPrinterPlugin',
+			'printSpool',
+			[{
+				"printBool": printBool
+			}]
 		);
 	}
 }

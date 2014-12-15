@@ -17,6 +17,8 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 	public static final String ACTION_CONNECT_BT = "connectBt";
 	public static final String ACTION_PRINT_TEST = "printTest";
 	public static final String ACTION_PRINT_JSON_ARRAY = "printJsonArray";
+	public static final String ACTION_SAVE_SPOOL = "saveSpool";
+	public static final String ACTION_PRINT_SPOOL = "printSpool";
 
 	private String isConnected;
 	private WoosimPrinter woosim;
@@ -37,8 +39,8 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				return true;
 			} else if (ACTION_CONNECT_BT.equals(action)) {
 				JSONObject arg_object = args.getJSONObject(0);
-				String bt_mac_addr = arg_object.getString("bt_mac_addr");
-				int ret = woosim.BTConnection(bt_mac_addr, false);
+				String btMacAddr = arg_object.getString("btMacAddr");
+				int ret = woosim.BTConnection(btMacAddr, false);
 				if (ret == 1) {
 					isConnected = "true";
 				}
@@ -51,6 +53,19 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				}
 
 				int ret = woosim.printSpool(true);
+				callbackContext.success(ret);
+	            return true;
+			} else if (ACTION_SAVE_SPOOL.equals(action)) {
+				for (int index=0; index<args.length(); index++){
+					JSONObject arg_object = args.getJSONObject(index);
+					woosim.saveSpool(arg_object.getString("charset"), arg_object.getString("data"), arg_object.getInt("fontValue"), arg_object.getBoolean("emphasis"));
+				}
+				callBackContext.success(1);
+				return true;
+			} else if (ACTION_PRINT_SPOOL.equals(action)) {
+				JSONObject arg_object = args.getJSONObject(0);
+				Boolean printBool = arg_object.getBoolean("printBool");
+				int ret = woosim.printSpool(print);
 				callbackContext.success(ret);
 	            return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
