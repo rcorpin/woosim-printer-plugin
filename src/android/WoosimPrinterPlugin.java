@@ -61,7 +61,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 					JSONObject arg_object = args.getJSONObject(index);
 					woosim.saveSpool(arg_object.getString("charset"), arg_object.getString("data"), arg_object.getInt("fontValue"), arg_object.getBoolean("emphasis"));
 				}
-				callBackContext.success(1);
+				callbackContext.success(1);
 				return true;
 			} else if (ACTION_PRINT_SPOOL.equals(action)) {
 				JSONObject arg_object = args.getJSONObject(0);
@@ -71,7 +71,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 	            return true;
 			} else if (ACTION_CLEAR_SPOOL.equals(action)) {
 				woosim.clearSpool();
-				callBackContext.success(1);
+				callbackContext.success(1);
 				return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
 				woosim.saveSpool(EUC_KR, " Sales Receipt\r\n\r\n\r\n", 0x11, true);
