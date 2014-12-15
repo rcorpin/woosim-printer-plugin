@@ -45,11 +45,8 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				callbackContext.success(ret);
 				return true;
 			} else if  (ACTION_PRINT_JSON_ARRAY.equals(action)) {
-				Log.d("WoosimPrinterPlugin", "printJsonArray");
 				for (int index=0; index<args.length(); index++){
 					JSONObject arg_object = args.getJSONObject(index);
-					String fontValStr = new Integer(arg_object.getInt("fontValue")).toString();
-					Log.d("Saving to spool", arg_object.getString("charset") + " data: " + arg_object.getString("data") + " fontValue: " + fontValStr);
 					woosim.saveSpool(arg_object.getString("charset"), arg_object.getString("data"), arg_object.getInt("fontValue"), arg_object.getBoolean("emphasis"));
 				}
 
@@ -57,7 +54,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 				callbackContext.success(ret);
 	            return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
-				woosim.saveSpool(EUC_KR, " Dr. Green Invoice\r\n\r\n\r\n", 0x11, true);
+				woosim.saveSpool(EUC_KR, " Sales Receipt\r\n\r\n\r\n", 0x11, true);
 				woosim.saveSpool(EUC_KR, "MERCHANT NAME     woosim coffee\r\n", 0, false);
 				woosim.saveSpool(EUC_KR, "MASTER            Gil-dong Hong\r\n", 0, false);
 				woosim.saveSpool(EUC_KR, "ADDRESS   #501, Daerung Techno\r\n          town3rd 448,Gasan-dong\r\n          Gumcheon-gu, Seoul\r\n          Korea\r\n", 0, false);
