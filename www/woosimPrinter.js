@@ -56,6 +56,15 @@ var woosimPrinter = {
 				"printBool": printBool
 			}]
 		);
+	},
+	clearSpool: function(successCallback, errorCallback){
+		cordova.exec(
+			successCallback,
+			errorCallback,
+			'WoosimPrinterPlugin',
+			'clearSpool',
+			[]
+		);
 	}
 }
 
