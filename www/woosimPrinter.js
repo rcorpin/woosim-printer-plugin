@@ -28,7 +28,7 @@ var woosimPrinter = {
 			[]
 		);
 	},
-	printArray: function(jsonArrayToBePrinted, successCallback, errorCallback) {
+	printJsonArray: function(jsonArrayToBePrinted, successCallback, errorCallback) {
 		cordova.exec(
 			successCallback,
 			errorCallback,
