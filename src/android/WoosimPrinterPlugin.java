@@ -20,6 +20,7 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 	public static final String ACTION_SAVE_SPOOL = "saveSpool";
 	public static final String ACTION_PRINT_SPOOL = "printSpool";
 	public static final String ACTION_CLEAR_SPOOL = "clearSpool";
+	public static final String ACTION_PRINT_IMAGE = "printImage";
 
 	private String isConnected;
 	private WoosimPrinter woosim;
@@ -72,6 +73,12 @@ public class WoosimPrinterPlugin extends CordovaPlugin {
 			} else if (ACTION_CLEAR_SPOOL.equals(action)) {
 				woosim.clearSpool();
 				callbackContext.success(1);
+				return true;
+			} else if (ACTION_PRINT_IMAGE.equals(action)) {
+				JSONObject arg_object = args.getJSONObject(0);
+				String fileLocation = arg_object.getString("fileLocation");
+				int ret = woosim.printBitmap(fileLocation);
+				callbackContext.success(ret);
 				return true;
 			} else if (ACTION_PRINT_TEST.equals(action)) {
 				woosim.saveSpool(EUC_KR, " Sales Receipt\r\n\r\n\r\n", 0x11, true);

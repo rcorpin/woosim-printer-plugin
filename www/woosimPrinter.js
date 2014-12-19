@@ -65,6 +65,17 @@ var woosimPrinter = {
 			'clearSpool',
 			[]
 		);
+	},
+	printImage: function(fileLocation, successCallback, errorCallback){
+		cordova.exec(
+			successCallback,
+			errorCallback,
+			'WoosimPrinterPlugin',
+			'printImage',
+			[{
+				"fileLocation": fileLocation
+			}]
+		);
 	}
 }
 
