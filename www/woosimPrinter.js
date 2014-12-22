@@ -67,6 +67,7 @@ var woosimPrinter = {
 		);
 	},
 	printImage: function(fileLocation, successCallback, errorCallback){
+		console.log("fileLocation", fileLocation);
 		cordova.exec(
 			successCallback,
 			errorCallback,
